@@ -12,8 +12,10 @@ import contactsApi from "../services/contactsApi";
 const ContactsContext = createContext();
 
 export const useContactsContext = () => {
+    
     const context = useContext(ContactsContext);
-    if (!context) {
+
+    if (context) {
         throw new Error(
             "useContactsContext deve ser usado dentro de ContactsProvider"
         );
